@@ -341,7 +341,7 @@ typedef struct Vector2 {
 
 	Vector2 operator -(Vector2 rhs)
 	{
-
+		return Vector2();
 	}
 
 	void operator +=(Vector2 rhs)
@@ -351,20 +351,16 @@ typedef struct Vector2 {
 
 	Vector2 operator *(float rhs)
 	{
-
+		return Vector2();
 	}
 
 	float magnitude()
 	{
-		return (x * x) + (y * y);
+
 	}
 
 	Vector2 normalize()
 	{
-		float magnitude;
-		x /= magnitude;
-		y /= magnitude;
-
 		return Vector2();
 	}
 

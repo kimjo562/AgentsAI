@@ -12,4 +12,4 @@ public:
 
 	// pure virtual function for executing the behaviour
 	virtual Vector2 update(Agent* agent, float deltaTime) = 0;
-};
+};
