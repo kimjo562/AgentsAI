@@ -2,14 +2,15 @@
 #include "Behaviour.h"
 #pragma once
 
-class SeekBehaviour : public Behaviour
+class FleeBehaviour : public Behaviour
 {
 public:
-	SeekBehaviour() {}
-	virtual ~SeekBehaviour() {}
+	FleeBehaviour() {}
+	virtual ~FleeBehaviour() {}
 
 	virtual Vector2 update(Agent* agent, float deltaTime);
 	void setTarget(Agent* agent) { m_target = agent; }
+
 private:
-	Agent* m_target;
+	Agent* m_target = nullptr;
 };

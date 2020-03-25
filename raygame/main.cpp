@@ -13,6 +13,11 @@
 #include "Behaviour.h"
 #include "KeyboardBehaviour.h"
 #include "SeekBehaviour.h"
+#include "FleeBehaviour.h"
+#include "WanderBehaviour.h"
+#include "PursueBehaviour.h"
+#include "EvadeBehaviour.h"
+#include "ArrivalBehaviour.h"
 #include "Agent.h"
 
 
@@ -32,11 +37,22 @@ int main()
 	KeyboardBehaviour* keyboardBehaviour = new KeyboardBehaviour();
 	player->addBehaviour(keyboardBehaviour);
 
+	//Agent* enemy = new Agent();
+	//enemy->setPosition({ 200.0f, 200.0f });
+	//SeekBehaviour* seekBehaviour = new SeekBehaviour();
+	//seekBehaviour->setTarget(player);
+	//enemy->addBehaviour(seekBehaviour);
+
+	//Agent* enemy = new Agent();
+	//enemy->setPosition({ 200.0f, 200.0f });
+	//PursueBehaviour* pursueBehaviour = new PursueBehaviour();
+	//pursueBehaviour->setTarget(player);
+	//enemy->addBehaviour(pursueBehaviour);
+
 	Agent* enemy = new Agent();
-	enemy->setPosition({ 300.0f, 300.0f });
-	SeekBehaviour* seekBehaviour = new SeekBehaviour();
-	seekBehaviour->setTarget(player);
-	enemy->addBehaviour(seekBehaviour);
+	enemy->setPosition({ 200.0f, 200.0f });
+	WanderBehaviour* pursueBehaviour = new WanderBehaviour();
+	enemy->addBehaviour(pursueBehaviour);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop

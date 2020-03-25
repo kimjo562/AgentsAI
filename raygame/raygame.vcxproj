@@ -133,15 +133,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="ArrivalBehaviour.cpp" />
+    <ClCompile Include="EvadeBehaviour.cpp" />
+    <ClCompile Include="FleeBehaviour.cpp" />
     <ClCompile Include="KeyboardBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PursueBehaviour.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
+    <ClCompile Include="SteeringBehaviour.cpp" />
+    <ClCompile Include="WanderBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="ArrivalBehaviour.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="EvadeBehaviour.h" />
+    <ClInclude Include="FleeBehaviour.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
+    <ClInclude Include="PursueBehaviour.h" />
     <ClInclude Include="SeekBehaviour.h" />
+    <ClInclude Include="SteeringBehaviour.h" />
+    <ClInclude Include="WanderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

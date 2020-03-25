@@ -1,29 +1,26 @@
+#include "Behaviour.h"
 #include "Agent.h"
 #include "raylib.h"
 
 void Agent::update(float deltaTime)
 {
 	//Force is equal to zero
-	Vector2 force = { 0, 0 };
+	Vector2 totalForce = { 0, 0 };
 
 	//foreach Behaviour in Behaviour list
-	for (auto i = m_BehaviourList.begin(); i < m_BehaviourList.end(); i++)
+	for (auto i = m_BehaviourList.begin(); i != m_BehaviourList.end(); i++)
 	{
-		Behaviour* ptr = *i;
-		// Call the Behaviour’s Update function and add the returned value to Force
-		// Behaviour list* = new Behaviour();
-		// i->update();
+		// Call the Behaviour’s Update function
+		Vector2 force = (*i)->update(this, deltaTime);
 
-		// force += (*i)->update(this, deltaTime);
+		// Add the returned value to Force
+		totalForce += force;
 	}	
-
-	force = /* the returned value */
-
 	//Add Force multiplied by delta time to Velocity
-	m_Velocity = m_Velocity + (force * deltaTime);
+	addForce(totalForce * deltaTime);
 
 	//Add Velocity multiplied by delta time to Position
-	m_Position = m_Position * (deltaTime);
+	m_Position += m_Velocity * (deltaTime);
 }
 
 void Agent::draw()
@@ -31,7 +28,13 @@ void Agent::draw()
 	DrawRectangle(m_Position.x, m_Position.y, 10, 10, PURPLE);
 }
 
-void Agent::addBehaviour(Behaviour * behaviour)
+void Agent::addBehaviour(Behaviour* behaviour)
 {
+	// Add Behaviour to the Behaviour List
+	m_BehaviourList.insert(m_BehaviourList.end(), behaviour);
+}
 
+void Agent::addForce(Vector2 force)
+{
+	m_Velocity += force;
 }
