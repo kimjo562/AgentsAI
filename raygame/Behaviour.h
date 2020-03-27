@@ -2,6 +2,7 @@
 #include "raylib.h"
 #pragma once
 
+enum eBehaviourResult { FAILURE, SUCCESS };
 class Behaviour 
 {
 public:
