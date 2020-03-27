@@ -34,8 +34,8 @@ int main()
 
 	Agent* player = new Agent();
 	player->setPosition({ 200.0f, 200.0f });
-	player->setSpeed(175.0f);
-	player->setColor(PURPLE);
+	player->setSpeed(200.0f);
+	player->setColor(VIOLET);
 	KeyboardBehaviour* keyboardBehaviour = new KeyboardBehaviour();
 	player->addBehaviour(keyboardBehaviour);
 	ScreenBehaviour* screenBehaviour = new ScreenBehaviour();
@@ -43,7 +43,7 @@ int main()
 
 	Agent* seek = new Agent();
 	seek->setPosition({ 400.0f, 400.0f });
-	seek->setSpeed(200.0f);
+	seek->setSpeed(175.0f);
 	seek->setColor(ORANGE);
 	SeekBehaviour* seekBehaviour = new SeekBehaviour();
 	seek->addBehaviour(seekBehaviour);
@@ -52,7 +52,7 @@ int main()
 
 	Agent* pursue = new Agent();
 	pursue->setPosition({ 420.0f, 420.0f });
-	pursue->setSpeed(200.0f);
+	pursue->setSpeed(175.0f);
 	pursue->setColor(RED);
 	PursueBehaviour* pursuitBehaviour = new PursueBehaviour();
 	pursue->addBehaviour(pursuitBehaviour);

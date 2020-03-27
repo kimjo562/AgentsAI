@@ -41,6 +41,6 @@ protected:
 	Vector2 m_Position = {0, 0};
 	Vector2 m_Velocity = {0, 0};
 
-	float m_speed = 175.0f;
-	Color m_color = PURPLE;
+	float m_speed = 200.0f;
+	Color m_color = VIOLET;
 };
