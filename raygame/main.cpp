@@ -10,49 +10,80 @@
 ********************************************************************************************/
 
 #include "raylib.h"
+#include "Agent.h"
 #include "Behaviour.h"
 #include "KeyboardBehaviour.h"
+#include "ArrivalBehaviour.h"
 #include "SeekBehaviour.h"
 #include "FleeBehaviour.h"
 #include "WanderBehaviour.h"
 #include "PursueBehaviour.h"
 #include "EvadeBehaviour.h"
-#include "ArrivalBehaviour.h"
-#include "Agent.h"
-
+#include "ScreenBehaviour.h"
 
 int main()
 {
 	// Initialization
 	//--------------------------------------------------------------------------------------
-	int screenWidth = 800;
-	int screenHeight = 450;
+	int screenWidth = 980;
+	int screenHeight = 550;
 
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
 	SetTargetFPS(60);
 
 	Agent* player = new Agent();
-	player->setPosition({ 100.0f, 100.0f });
+	player->setPosition({ 200.0f, 200.0f });
+	player->setSpeed(175.0f);
+	player->setColor(PURPLE);
 	KeyboardBehaviour* keyboardBehaviour = new KeyboardBehaviour();
 	player->addBehaviour(keyboardBehaviour);
+	ScreenBehaviour* screenBehaviour = new ScreenBehaviour();
+	player->addBehaviour(screenBehaviour);
 
-	//Agent* enemy = new Agent();
-	//enemy->setPosition({ 200.0f, 200.0f });
-	//SeekBehaviour* seekBehaviour = new SeekBehaviour();
-	//seekBehaviour->setTarget(player);
-	//enemy->addBehaviour(seekBehaviour);
+	Agent* seek = new Agent();
+	seek->setPosition({ 400.0f, 400.0f });
+	seek->setSpeed(200.0f);
+	seek->setColor(ORANGE);
+	SeekBehaviour* seekBehaviour = new SeekBehaviour();
+	seek->addBehaviour(seekBehaviour);
+	seekBehaviour->setTarget(player);
+	seek->addBehaviour(screenBehaviour);
 
-	//Agent* enemy = new Agent();
-	//enemy->setPosition({ 200.0f, 200.0f });
-	//PursueBehaviour* pursueBehaviour = new PursueBehaviour();
-	//pursueBehaviour->setTarget(player);
-	//enemy->addBehaviour(pursueBehaviour);
+	Agent* pursue = new Agent();
+	pursue->setPosition({ 420.0f, 420.0f });
+	pursue->setSpeed(200.0f);
+	pursue->setColor(RED);
+	PursueBehaviour* pursuitBehaviour = new PursueBehaviour();
+	pursue->addBehaviour(pursuitBehaviour);
+	pursuitBehaviour->setTarget(player);
+	pursue->addBehaviour(screenBehaviour);
 
-	Agent* enemy = new Agent();
-	enemy->setPosition({ 200.0f, 200.0f });
-	WanderBehaviour* pursueBehaviour = new WanderBehaviour();
-	enemy->addBehaviour(pursueBehaviour);
+	Agent* flee = new Agent();
+	flee->setPosition({ 300.0f, 300.0f });
+	flee->setSpeed(150.0f);
+	flee->setColor(BLUE);
+	FleeBehaviour* fleeBehaviour = new FleeBehaviour();
+	flee->addBehaviour(fleeBehaviour);
+	fleeBehaviour->setTarget(player);
+	flee->addBehaviour(screenBehaviour);
+
+	Agent* evade = new Agent();
+	evade->setPosition({ 320.0f, 320.0f });
+	evade->setSpeed(150.0f);
+	evade->setColor(SKYBLUE);
+	EvadeBehaviour* evadeBehaviour = new EvadeBehaviour();
+	evade->addBehaviour(evadeBehaviour);
+	evadeBehaviour->setTarget(player);
+	evade->addBehaviour(screenBehaviour);
+
+	Agent* wander = new Agent();
+	wander->setPosition({ 500.0f, 500.0f });
+	wander->setSpeed(100.0f);
+	wander->setColor(LIME);
+	WanderBehaviour* wanderBehaviour = new WanderBehaviour();
+	wander->addBehaviour(wanderBehaviour);
+	wander->addBehaviour(screenBehaviour);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -60,8 +91,13 @@ int main()
 	{
 		// Update
 		//----------------------------------------------------------------------------------
-		player->update(GetFrameTime());
-		enemy->update(GetFrameTime());
+		float deltaTime = GetFrameTime();
+		player->update(deltaTime);
+		seek->update(deltaTime);
+		pursue->update(deltaTime);
+		flee->update(deltaTime);
+		evade->update(deltaTime);
+		wander->update(deltaTime);
 		//----------------------------------------------------------------------------------
 
 		// Draw
@@ -71,7 +107,11 @@ int main()
 		ClearBackground(BLACK);
 
 		player->draw();
-		enemy->draw();
+		seek->draw();
+		pursue->draw();
+		flee->draw();
+		evade->draw();
+		wander->draw();
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------

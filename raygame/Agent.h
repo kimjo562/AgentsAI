@@ -28,6 +28,10 @@ public:
 	void setVelocity(Vector2 velocity) { m_Velocity = velocity; }
 	Vector2 getVelocity() { return m_Velocity; }
 
+	//Speed functions
+	void setSpeed(float speed) { m_speed = speed; }
+	float getSpeed() { return m_speed; }
+
 	// Color Function
 	void setColor(Color color) { m_color = color; }
 	Color getColor() { return m_color; }
@@ -36,5 +40,7 @@ protected:
 	std::vector<Behaviour*> m_BehaviourList;
 	Vector2 m_Position = {0, 0};
 	Vector2 m_Velocity = {0, 0};
-	Color m_color;
+
+	float m_speed = 175.0f;
+	Color m_color = PURPLE;
 };

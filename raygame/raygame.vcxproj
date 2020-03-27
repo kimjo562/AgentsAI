@@ -139,6 +139,7 @@
     <ClCompile Include="KeyboardBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PursueBehaviour.cpp" />
+    <ClCompile Include="ScreenBehaviour.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
     <ClCompile Include="SteeringBehaviour.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="FleeBehaviour.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
     <ClInclude Include="PursueBehaviour.h" />
+    <ClInclude Include="ScreenBehaviour.h" />
     <ClInclude Include="SeekBehaviour.h" />
     <ClInclude Include="SteeringBehaviour.h" />
     <ClInclude Include="WanderBehaviour.h" />

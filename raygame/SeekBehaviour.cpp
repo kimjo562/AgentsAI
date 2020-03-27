@@ -18,7 +18,7 @@ Vector2 SeekBehaviour::update(Agent * agent, float deltaTime)
 	Vector2 direction = targetPos - pos;
 	direction = direction.normalize();
 	//Multiply the direction by the speed we want the agent to move
-	direction = direction * 100;
+	direction = direction * 200;
 	//Subtract the agent’s current velocity from the result to get the force we need to apply
 	Vector2 force = direction - agent->getVelocity();
 
