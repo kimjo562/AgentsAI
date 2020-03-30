@@ -1,4 +1,3 @@
-#include "Agent.h"
 #include "Behaviour.h"
 #pragma once
 
@@ -10,6 +9,7 @@ public:
 
 	virtual Vector2 update(Agent* agent, float deltaTime);
 	void setTarget(Agent* agent) { m_target = agent; }
+
 private:
 	Agent* m_target;
 };

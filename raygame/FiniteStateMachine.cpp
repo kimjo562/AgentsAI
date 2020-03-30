@@ -1,13 +1,12 @@
 #include "FiniteStateMachine.h"
-#include "Transition.h"
 
 FSM::~FSM()
 {
-	for (auto state : m_states)
-		delete state;
-	for (auto t : m_transitions)
+	for (State* s : m_states)
+		delete s;
+	for (Transition* t : m_transitions)
 		delete t;
-	for (auto c : m_conditions)
+	for (Condition* c : m_conditions)
 		delete c;
 }
 

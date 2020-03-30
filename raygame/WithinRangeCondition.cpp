@@ -12,5 +12,5 @@ bool WithinRangeCondition::test(Agent* agent) const
 	float distance = (targetPos - pos).magnitude();
 
 	// Return the result
-	return distance < -m_range;
+	return distance <= m_range;
 }

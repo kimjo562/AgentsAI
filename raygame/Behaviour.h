@@ -1,12 +1,9 @@
 #include "Agent.h"
-#include "raylib.h"
 #pragma once
 
-enum eBehaviourResult { FAILURE, SUCCESS };
 class Behaviour 
 {
 public:
-
 	// Empty constructors and destructors for base class
 	Behaviour() {}
 	virtual ~Behaviour() {}

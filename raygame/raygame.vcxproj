@@ -138,6 +138,7 @@
     <ClCompile Include="EvadeBehaviour.cpp" />
     <ClCompile Include="FiniteStateMachine.cpp" />
     <ClCompile Include="FleeBehaviour.cpp" />
+    <ClCompile Include="IdleState.cpp" />
     <ClCompile Include="KeyboardBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PursueBehaviour.cpp" />

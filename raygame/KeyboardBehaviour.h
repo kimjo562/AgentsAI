@@ -1,5 +1,4 @@
 #include "Behaviour.h"
-#include "Agent.h"
 #pragma once
 
 class KeyboardBehaviour : public Behaviour

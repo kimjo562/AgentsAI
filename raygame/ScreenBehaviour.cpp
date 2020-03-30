@@ -8,7 +8,7 @@ Vector2 ScreenBehaviour::update(Agent * agent, float deltaTime)
 	Vector2 force = { 0, 0 };
 
 	//If out of bounds
-	if (x < 50 || x >= 970 || y < 50 || y >= 540) {
+	if (x < 25 || x >= 975 || y < 25 || y >= 545) {
 		//Get this agent's position
 		Vector2 pos = agent->getPosition();
 		//Target the center

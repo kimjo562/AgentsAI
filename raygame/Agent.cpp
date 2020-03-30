@@ -1,6 +1,5 @@
 #include "Behaviour.h"
 #include "Agent.h"
-#include "raylib.h"
 
 void Agent::update(float deltaTime)
 {

@@ -10,8 +10,6 @@
 ********************************************************************************************/
 
 #include "raylib.h"
-#include "Agent.h"
-#include "Behaviour.h"
 #include "KeyboardBehaviour.h"
 #include "ScreenBehaviour.h"
 #include "FiniteStateMachine.h"
@@ -30,6 +28,7 @@ int main()
 
 	SetTargetFPS(60);
 
+	// Create the player
 	Agent* player = new Agent();
 	player->setPosition(Vector2{ 200.0f, 200.0f });
 	player->setSpeed(200.0f);
@@ -37,6 +36,7 @@ int main()
 	// Create and add the keyboard Behaviour
 	KeyboardBehaviour* keyboardBehaviour = new KeyboardBehaviour();
 	player->addBehaviour(keyboardBehaviour);
+	//Create and add screen edge behavior
 	ScreenBehaviour* screenBehaviour = new ScreenBehaviour();
 	player->addBehaviour(screenBehaviour);
 
@@ -47,13 +47,17 @@ int main()
 	enemy->setColor(LIME);
 	// Create the enemy's FSM
 	FSM* enemyFSM = new FSM();
-	// Create and add the states
+	enemy->addBehaviour(enemyFSM);
+	enemy->addBehaviour(screenBehaviour);
+	// Create and add the idle state
 	IdleState* idleState = new IdleState();
 	enemyFSM->addState(idleState);
+	// Create and add the attack state
 	EnemyAttackState* attackState = new EnemyAttackState(player, 175.0f);
 	enemyFSM->addState(attackState);
+
 	// Create and add the condition
-	Condition* withinRangeCondition = new WithinRangeCondition(player, 200);
+	Condition* withinRangeCondition = new WithinRangeCondition(player, 100);
 	enemyFSM->addCondition(withinRangeCondition);
 	// Create and add the Transition
 	Transition* toAttackTransition = new Transition(attackState, withinRangeCondition);
