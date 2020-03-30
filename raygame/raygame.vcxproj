@@ -134,7 +134,7 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="ArrivalBehaviour.cpp" />
-    <ClCompile Include="AttackState.cpp" />
+    <ClCompile Include="EnemyAttackState.cpp" />
     <ClCompile Include="EvadeBehaviour.cpp" />
     <ClCompile Include="FiniteStateMachine.cpp" />
     <ClCompile Include="FleeBehaviour.cpp" />
@@ -146,11 +146,12 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="SteeringBehaviour.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
+    <ClCompile Include="WithinRangeCondition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="ArrivalBehaviour.h" />
-    <ClInclude Include="AttackState.h" />
+    <ClInclude Include="EnemyAttackState.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Condition.h" />
     <ClInclude Include="EvadeBehaviour.h" />

@@ -54,7 +54,10 @@
     <ClCompile Include="FiniteStateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AttackState.cpp">
+    <ClCompile Include="EnemyAttackState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WithinRangeCondition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,10 +110,10 @@
     <ClInclude Include="IdleState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AttackState.h">
+    <ClInclude Include="WithinRangeCondition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WithinRangeCondition.h">
+    <ClInclude Include="EnemyAttackState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

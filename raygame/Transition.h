@@ -9,8 +9,8 @@ class Transition
 public:
 	Transition(State* target, Condition* condition) : m_target(target), m_condition(condition) {}
 	~Transition() {}
-	State* getTargetState() { return m_target; }
 
+	State* getTargetState() { return m_target; }
 	bool hasTriggered(Agent* agent) 
 	{
 		return m_condition->test(agent);

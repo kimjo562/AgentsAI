@@ -6,7 +6,7 @@ Vector2 FleeBehaviour::update(Agent * agent, float deltaTime)
 	if (agent == nullptr)
 	{
 		// return a zero vector
-		return Vector2({ 0,0 });
+		return Vector2({ 0.0f,0.0f });
 	}
 
 	//Get this agent’s position

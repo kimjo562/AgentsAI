@@ -7,5 +7,6 @@ class IdleState : public State
 public:
 	IdleState() {}
 	virtual ~IdleState() {}
+
 	virtual void update(Agent* agent, float deltaTime) {}
 };
