@@ -137,6 +137,7 @@
     <ClCompile Include="ArrivalBehaviour.cpp" />
     <ClCompile Include="BehaviourDecision.cpp" />
     <ClCompile Include="DecisionTreeBehaviour.cpp" />
+    <ClCompile Include="dijkstrasSearch.cpp" />
     <ClCompile Include="EnemyAttackState.cpp" />
     <ClCompile Include="EvadeBehaviour.cpp" />
     <ClCompile Include="FiniteStateMachine.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="BehaviourDecision.h" />
     <ClInclude Include="Decision.h" />
     <ClInclude Include="DecisionTreeBehaviour.h" />
+    <ClInclude Include="dijkstrasSearch.h" />
     <ClInclude Include="EnemyAttackState.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Condition.h" />
