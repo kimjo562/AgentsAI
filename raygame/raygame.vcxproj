@@ -132,8 +132,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ABDecision.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="ArrivalBehaviour.cpp" />
+    <ClCompile Include="BehaviourDecision.cpp" />
+    <ClCompile Include="DecisionTreeBehaviour.cpp" />
     <ClCompile Include="EnemyAttackState.cpp" />
     <ClCompile Include="EvadeBehaviour.cpp" />
     <ClCompile Include="FiniteStateMachine.cpp" />
@@ -145,13 +148,17 @@
     <ClCompile Include="ScreenBehaviour.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
     <ClCompile Include="State.cpp" />
-    <ClCompile Include="SteeringBehaviour.cpp" />
+    <ClCompile Include="SteeringForce.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
     <ClCompile Include="WithinRangeCondition.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ABDecision.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="ArrivalBehaviour.h" />
+    <ClInclude Include="BehaviourDecision.h" />
+    <ClInclude Include="Decision.h" />
+    <ClInclude Include="DecisionTreeBehaviour.h" />
     <ClInclude Include="EnemyAttackState.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Condition.h" />
@@ -164,7 +171,7 @@
     <ClInclude Include="ScreenBehaviour.h" />
     <ClInclude Include="SeekBehaviour.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="SteeringBehaviour.h" />
+    <ClInclude Include="SteeringForce.h" />
     <ClInclude Include="Transition.h" />
     <ClInclude Include="WanderBehaviour.h" />
     <ClInclude Include="WithinRangeCondition.h" />

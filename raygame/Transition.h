@@ -1,8 +1,8 @@
+#include "Agent.h"
 #include "Condition.h"
 #pragma once
 
 class State;
-class Agent;
 
 class Transition 
 {

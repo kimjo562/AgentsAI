@@ -1,6 +1,6 @@
 #include "ScreenBehaviour.h"
 
-Vector2 ScreenBehaviour::update(Agent * agent, float deltaTime)
+void ScreenBehaviour::update(Agent * agent, float deltaTime)
 {
 	float x = agent->getPosition().x + agent->getVelocity().x;
 	float y = agent->getPosition().y + agent->getVelocity().y;
@@ -23,5 +23,5 @@ Vector2 ScreenBehaviour::update(Agent * agent, float deltaTime)
 		force = force - agent->getVelocity();
 	}
 
-	return force;
+	agent->addForce(force * deltaTime);
 }

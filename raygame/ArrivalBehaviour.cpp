@@ -1,12 +1,12 @@
 #include "ArrivalBehaviour.h"
 
-Vector2 ArrivalBehaviour::update(Agent * agent, float deltaTime)
+void ArrivalBehaviour::update(Agent * agent, float deltaTime)
 {
 	//If the target is null
-	if (agent == nullptr)
+	if (agent == nullptr || m_target == nullptr)
 	{
 		// return a zero vector
-		return Vector2({ 0.0f,0.0f });
+		return;
 	}
 
 	//Get this agent’s position
@@ -19,13 +19,13 @@ Vector2 ArrivalBehaviour::update(Agent * agent, float deltaTime)
 	Vector2 direction = targetPos - pos;
 	direction = direction.normalize();
 	//Multiply the direction by the speed we want the agent to move
-	direction = direction * 100;
+	direction = direction * agent->getSpeed();
 
 	//Subtract the agent’s current velocity from the result to get the force we need to apply
 	Vector2 force = direction - agent->getVelocity() - desiredVel;
 
 	//return the force
-	return force;
+	agent->addForce(force * deltaTime);
 }
 
 // https://gamedevelopment.tutsplus.com/tutorials/understanding-steering-behaviors-flee-and-arrival--gamedev-1303

@@ -1,7 +1,7 @@
 #include "WanderBehaviour.h"
 #include <cstdlib>
 
-Vector2 WanderBehaviour::update(Agent * agent, float deltaTime)
+void WanderBehaviour::update(Agent * agent, float deltaTime)
 {
 	auto randVec = []() {
 		float randX = (float)rand() - ((float)RAND_MAX) / 2;
@@ -32,11 +32,14 @@ Vector2 WanderBehaviour::update(Agent * agent, float deltaTime)
 	Vector2 direction = targetPos - pos;
 	direction = direction.normalize();
 	//Multiply the direction by the speed we want the agent to move
-	direction = direction * 100;
+	direction = direction * agent->getSpeed();
 	//Subtract the agent’s current velocity from the result to get the force we need to apply
 	Vector2 force = direction - agent->getVelocity();
 
-	return force;
+	agent->addForce(force * deltaTime);
+
+	//Change color
+	agent->setColor(LIME);
 }
 
 // https://gamedevelopment.tutsplus.com/tutorials/understanding-steering-behaviors-wander--gamedev-1624
